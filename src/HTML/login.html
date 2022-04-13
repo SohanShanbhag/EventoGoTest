@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title id="title">EventoGo Login</title>
+         <!-- Cool Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <!-- Our stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/src/CSS/index.css">
+    </head>
+    <body>
+        <div id="main">
+            <img src="/src/IMG/logo.png" style="height:150px;margin-left:45%">
+            <div id="content_container" style="margin-left: 34.9%;">
+                <div id="form_container">
+                    <div id="form_header_container">
+                        <h2 id="form_header"> Login  </h2>
+                    </div>
+
+                    <div id="form_content_container">
+                        <div id="form_content_inner_container">
+                            <input type="email" id="email" placeholder="Email">
+                            <input type="password" id="password" placeholder="Password">
+                            <button onclick="window.location.href = '/src/HTML/register.html'" class="button" >Don't have an account?</button>
+                            <button class="button" onclick="resetpass()" style="margin-left:100px">Forgot password?</button>
+                            <div id="button_container">
+                                <button onclick="login()">Login</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="welcome" style="display: none;">
+            <div id="top-strip" style="background-color: white; height: 40px">
+                <button href="" class="button" onclick="document.getElementById('main').style.display = 'none'" style="font-size: 25px; text-decoration: none;">Home</button>
+                <button href="" class="button" onclick="" style="font-size: 25px; text-decoration: none; width:200px">Privacy Policy</button>
+                <button class="button" onclick="document.getElementById('changer').style.display = 'block'" style="font-size: 25px; text-decoration: none; width:300px">Change Password</button>
+                <button id="logout" class="button" onclick="logout()" style="font-size: 25px; text-decoration: none;">Logout</button>
+                <button id="delete" class="button" onclick="deleteAcc()" style="font-size: 25px; text-decoration: none; width:200px">Delete Account</button>
+            </div>
+            <div style="background-image:linear-gradient(to bottom right, yellow); height:120px">
+                <img src="/src/IMG/logo.png" style="height:120px;margin-left:45%">
+                <b><h3 style="color: white;margin-top:-110px;font-weight:bolder;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Welcome, <span id="wlcname"></span></h3></b>
+            </div>
+            <div id="changer" style="display: none;">
+                <div id="content_container" style="margin-left: 34.9%;">
+                    <div id="form_container">
+                        <div id="form_header_container">
+                            <h2 id="form_header"> Change Password  </h2>
+                        </div>
+    
+                        <div id="form_content_container">
+                            <div id="form_content_inner_container">
+                                <input type="password" id="newpassword" placeholder="New Password">
+                                <input type="password" id="newpassword2" placeholder="Re-enter Password">
+                                <br>
+                                <br>
+                                <div id="button_container">
+                                    <button onclick="changepass()">Change Password</button>
+                                </div>
+                                <br>
+                                <h4 style="color: white; font-family:Arial, Helvetica, sans-serif; text-align:center">Note: After you change your password, you will be sent a mail for security purposes and 
+                                    you will have to login again. Please check your spam folder.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('T5bVGVYIpF_SB5-YZ')
+</script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="/src/JS/index.js"></script>
+</html>
